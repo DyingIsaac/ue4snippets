@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ue4consdebug</Title>
+      <Author>github.com/narthur157</Author>
+      <Description>Unreal Engine console debugging option snippet</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ue4consdebug</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+          <ToolTip>Debug option name</ToolTip>
+          <Default>MyClass</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>projName</ID>
+          <ToolTip>Project name</ToolTip>
+          <Default>MyProject</Default>
+          <Function>
+          </Function>
+        </Literal>
+		<Literal Editable="true">
+          <ID>description</ID>
+          <ToolTip>Describes what this debug option does</ToolTip>
+          <Default>description</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp"><![CDATA[static int32 Debug$name$ = 0;
+FAutoConsoleVariableRef CVARDebug$name$(
+	TEXT("$projName$.$name$"),
+	Debug$name$,
+	TEXT("$description$"),
+	ECVF_Cheat);
+$selected$ $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

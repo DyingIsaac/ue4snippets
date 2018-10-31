@@ -5,12 +5,12 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>ue4log</Title>
-      <Author>http://mpolaczyk.pl</Author>
-      <Description>Unreal Engine UE_LOG snippet</Description>
+      <Title>ue4repl</Title>
+      <Author>github.com/narthur157</Author>
+      <Description>Unreal Engine GetLifetimeReplicatedProps snippet</Description>
       <HelpUrl>
       </HelpUrl>
-      <Shortcut>ue4log</Shortcut>
+      <Shortcut>ue4repl</Shortcut>
     </Header>
     <Snippet>
       <Declarations>
@@ -22,21 +22,22 @@
           </Function>
         </Literal>
         <Literal Editable="true">
-          <ID>level</ID>
-          <ToolTip>Log level (NoLoggigng, Fatal, Error, Warning, Display, Log, Verbose, VeryVerbose, All, NumVerbosity, VerbosityMask, SetColor, BreakOnLog)</ToolTip>
-          <Default>Error</Default>
+          <ID>class</ID>
+          <ToolTip>The class currently being edited</ToolTip>
+          <Default>ClassName</Default>
           <Function>
           </Function>
         </Literal>
         <Literal Editable="true">
-          <ID>text</ID>
-          <ToolTip>Enter log message here</ToolTip>
-          <Default>Log message</Default>
+          <ID>property</ID>
+          <ToolTip>Property to replicate</ToolTip>
+          <Default>Property</Default>
           <Function>
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="cpp"><![CDATA[void $class$::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+      <Code Language="cpp"><![CDATA[#include "Net/UnrealNetwork.h"
+	  void $class$::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
